@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Immortal Co-op</title>
+<meta name="description" content="Play Tale of Immortal (鬼谷八荒) together: your own characters, shared consequences and battles side by side, connected through Steam.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f2a27'/%3E%3Ccircle cx='24' cy='32' r='12' fill='none' stroke='%23e9e4d4' stroke-width='5'/%3E%3Ccircle cx='40' cy='32' r='12' fill='none' stroke='%238cc5b2' stroke-width='5'/%3E%3C/svg%3E">
+<style>
+:root {
+  --ink: #1f2a27; --paper: #f6f4ee; --card: #fffdf8; --rule: #dcd8cc; --muted: #5f655e;
+  --accent: #2f5d50; --accent-ink: #ffffff; --soft: #e9efe9; --warn: #8a5a0b; --warn-soft: #f7efdc;
+  --title: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #e6e3d9; --paper: #141817; --card: #1b201e; --rule: #2f3633; --muted: #a2a79f;
+    --accent: #8cc5b2; --accent-ink: #10201b; --soft: #1f2b27; --warn: #e2b866; --warn-soft: #2a2416;
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #e6e3d9; --paper: #141817; --card: #1b201e; --rule: #2f3633; --muted: #a2a79f;
+  --accent: #8cc5b2; --accent-ink: #10201b; --soft: #1f2b27; --warn: #e2b866; --warn-soft: #2a2416;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: var(--accent); }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+header.hero { padding: 64px 0 40px; border-bottom: 1px solid var(--rule); }
+.kicker { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+h1 { font-family: var(--title); font-size: clamp(40px, 7vw, 64px); line-height: 1.05; margin: 0 0 14px; font-weight: 600; }
+h1 span { color: var(--muted); font-weight: 400; font-size: .5em; display: block; margin-top: 6px; }
+.lede { font-size: 19px; max-width: 640px; margin: 0 0 28px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.button { display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; border-radius: 10px; background: var(--accent); color: var(--accent-ink);
+  font-weight: 600; text-decoration: none; font-size: 17px; }
+.button:hover { filter: brightness(1.08); }
+.button svg { width: 20px; height: 20px; }
+.secondary { color: var(--accent); font-weight: 500; }
+.meta { font-size: 14px; color: var(--muted); margin-top: 12px; }
+.badge { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .04em; padding: 3px 9px; border-radius: 999px; background: var(--warn-soft); color: var(--warn); margin-left: 8px; vertical-align: middle; }
+section { padding: 44px 0; border-bottom: 1px solid var(--rule); }
+h2 { font-family: var(--title); font-size: 30px; font-weight: 600; margin: 0 0 8px; }
+.sub { color: var(--muted); margin: 0 0 22px; max-width: 640px; }
+.steps { list-style: none; counter-reset: step; padding: 0; margin: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.steps li { counter-increment: step; background: var(--card); border: 1px solid var(--rule); border-radius: 12px; padding: 18px 18px 16px; }
+.steps li::before { content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--soft); color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+.steps strong { display: block; margin-bottom: 4px; }
+.note { background: var(--warn-soft); border-radius: 10px; padding: 14px 16px; margin-top: 18px; font-size: 15px; }
+.grid2 { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.card { background: var(--card); border: 1px solid var(--rule); border-radius: 12px; padding: 18px 20px; }
+.card h3 { margin: 0 0 6px; font-size: 17px; }
+.card p, .card ul { margin: 0; }
+ul.checks { padding-left: 20px; margin: 0; columns: 2 260px; column-gap: 32px; }
+ul.checks li { margin: 0 0 6px; break-inside: avoid; }
+kbd { font: 13px/1 ui-monospace, Consolas, monospace; border: 1px solid var(--rule); border-bottom-width: 2px; border-radius: 5px; padding: 2px 6px; background: var(--card); }
+dl { margin: 0; }
+dt { font-weight: 600; margin-top: 14px; }
+dd { margin: 4px 0 0; color: var(--muted); }
+footer { padding: 28px 0 48px; font-size: 14px; color: var(--muted); }
+footer p { margin: 4px 0; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">A fan-made mod for Tale of Immortal · 鬼谷八荒</p>
+    <h1>Immortal Co-op <span>Cultivate the same world, together</span></h1>
+    <p class="lede">Two to four friends each play their own character in a shared starting world. When one of you kills an NPC, it dies in everyone's world, and you can jump into each other's battles with your own builds. Players connect through Steam: no VPN, port forwarding or IP addresses.</p>
+    <div class="actions">
+      <a class="button" id="download" href="https://github.com/JosephCarmichael/ImmortalCoop/releases/latest">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>
+        <span id="download-label">Download the installer</span>
+      </a>
+      <a class="secondary" href="https://github.com/JosephCarmichael/ImmortalCoop/releases">All versions</a>
+    </div>
+    <p class="meta"><span id="version">Windows 10/11 · Steam version of the game</span><span class="badge">Early test build</span></p>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <h2>Install</h2>
+    <p class="sub">The installer checks everything that could stop the mod from loading or connecting, explains what to fix, and installs or updates the mod. Run it again any time to update.</p>
+    <ol class="steps">
+      <li><strong>Download</strong>ImmortalCoopSetup.exe, from the button above.</li>
+      <li><strong>Put it in your game folder and run it</strong>In Steam: right-click Tale of Immortal → Manage → Browse local files. (It also finds the game on its own.)</li>
+      <li><strong>Press Install</strong>Then start the game through Steam. The main menu now has a <em>Multiplayer</em> button.</li>
+    </ol>
+    <p class="note"><strong>Windows may warn you</strong> that the installer is unrecognized, because it is not code-signed. Choose <em>More info → Run anyway</em> (and <em>Keep</em> if your browser asks). The installer never changes your saves or campaigns, and backs up anything it replaces.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Play together</h2>
+    <p class="sub">Everyone needs the same version of the mod; the installer and the game tell you when an update is out.</p>
+    <div class="grid2">
+      <div class="card"><h3>Host</h3><p>Main menu → <em>Multiplayer</em> → <em>Host game</em>. Then <em>Invite friends</em> (Steam's friend list) or <em>Copy invite</em> and paste it to your friends in any chat. When everyone is connected, press <em>Start campaign</em>.</p></div>
+      <div class="card"><h3>Join</h3><p>Accept the Steam invitation, or open <em>Multiplayer</em> and press <em>Paste invite</em>. Then <em>Join game</em>. Each player needs their own Steam account.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What the installer checks</h2>
+    <p class="sub">Each check says what is wrong in plain words, and many have a button that fixes it.</p>
+    <ul class="checks">
+      <li>The game is found and closed</li>
+      <li>Steam is running and you are signed in</li>
+      <li>Your game version matches the mod</li>
+      <li>The game's mod support (MelonLoader) is present and set up</li>
+      <li>The game's folder name works on your Windows language (the 鬼谷八荒 folder makes modded games quit on English Windows; one click fixes it)</li>
+      <li>No second copy of the mod, and which other code mods could interfere</li>
+      <li>The game folder can be changed</li>
+      <li>Your installed version, and whether a newer one is out</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Something went wrong?</h2>
+    <p class="sub">Send a problem report: it goes privately to the mod's developer, with the logs needed to find the bug.</p>
+    <div class="grid2">
+      <div class="card"><h3>In the game</h3><p><em>Multiplayer</em> → <em>Report a problem</em>, or press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> anywhere (also in battles). You get a report number to mention to your host.</p></div>
+      <div class="card"><h3>If the game won't start</h3><p>Run the installer and press <em>Send logs</em>. If you are offline, the report is saved on your desktop to send by hand.</p></div>
+    </div>
+    <p class="note"><strong>What a report contains:</strong> the mod's, mod loader's and game's recent logs, your game and Windows version, the mods in your game folder and the state of your co-op session. Your Windows user name and session codes are removed. Reports are only visible to the developer and are deleted after 120 days.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Common messages</h2>
+    <dl>
+      <dt>"The host did not answer through Steam"</dt><dd>The host hasn't pressed Host game yet, or one of you is offline in Steam. Check both, then Join again.</dd>
+      <dt>"The session code does not match the host's"</dt><dd>The host gets a new code each time they start the game: copy their new invite.</dd>
+      <dt>"Game/mod campaign build mismatch"</dt><dd>Someone has a different version of the game or the mod. Everyone runs the installer to update, and lets Steam update the game.</dd>
+      <dt>"Steam is in offline mode"</dt><dd>In Steam: Steam menu → Go Online.</dd>
+      <dt>The game closes right after starting</dt><dd>Run the installer: it detects the folder-name problem on English Windows and fixes it.</dd>
+      <dt>No Multiplayer button</dt><dd>Run the installer and press Check again; it shows whether the mod loaded when the game last started.</dd>
+    </dl>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Immortal Co-op is an unofficial fan project, not affiliated with or endorsed by Guigu Studio. Tale of Immortal is required (Steam).</p>
+    <p><a href="https://github.com/JosephCarmichael/ImmortalCoop/releases">Releases and checksums</a> · <a id="reports" href="#">Reports (developer only)</a></p>
+  </div>
+</footer>
+
+<script>
+// The newest release: latest.json is published with each release (tools/publish_release.py).
+fetch("latest.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(info => {
+  if (!info || !info.installer || !info.installer.url) return;
+  document.getElementById("download").href = info.installer.url;
+  document.getElementById("download-label").textContent = "Download installer " + info.version;
+  const released = info.released ? " · released " + new Date(info.released + "T12:00:00Z").toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" }) : "";
+  document.getElementById("version").textContent = "Version " + info.version + released + " · Windows 10/11 · Steam version of the game";
+  if (info.reportUrl) document.getElementById("reports").href = info.reportUrl.replace(/\/api\/reports$/, "/reports");
+}).catch(() => {});
+</script>
+</body>
+</html>
