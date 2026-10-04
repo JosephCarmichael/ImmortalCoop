@@ -14,6 +14,6 @@
     "url": "https://github.com/JosephCarmichael/ImmortalCoop/releases/download/v0.4.0/ImmortalCoopSetup.exe",
     "sha256": "bd42dfd8f618ef0ba13ac50dd80da8ca99a9766397d7909a3d53dfa4197a0b8a"
   },
-  "reportUrl": "",
-  "reportKey": ""
+  "reportUrl": "https://immortal-coop-reports.josephcarmichael.workers.dev/api/reports",
+  "reportKey": "oDcBeVDlKL_TjMaAZ_RApZTn"
 }
