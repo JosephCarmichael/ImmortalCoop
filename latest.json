@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "version": "0.4.0",
+  "released": "2026-10-04",
+  "gameBuild": "21758240",
+  "notes": "First public test build. Players connect through Steam: no VPN or port forwarding. The installer checks your game, Steam and Windows settings, installs and updates the mod; the game tells you when an update is out; problem reports from the game (Multiplayer \u2192 Report a problem, or Ctrl+Shift+R) and the installer (Send logs).",
+  "dll": {
+    "url": "https://github.com/JosephCarmichael/ImmortalCoop/releases/download/v0.4.0/ImmortalCoop.dll",
+    "sha256": "f24492d1f73cdcc980e145e75f6a4ab01bed38c00aaf8285df623bf3327ff9f7",
+    "size": 1150464
+  },
+  "installer": {
+    "version": "0.4.0",
+    "url": "https://github.com/JosephCarmichael/ImmortalCoop/releases/download/v0.4.0/ImmortalCoopSetup.exe",
+    "sha256": "bd42dfd8f618ef0ba13ac50dd80da8ca99a9766397d7909a3d53dfa4197a0b8a"
+  },
+  "reportUrl": "",
+  "reportKey": ""
+}
