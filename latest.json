@@ -1,18 +1,18 @@
 {
   "schema": 1,
-  "version": "0.4.0",
-  "released": "2026-10-04",
+  "version": "0.5.0",
+  "released": "2026-10-18",
   "gameBuild": "21758240",
-  "notes": "First public test build. Players connect through Steam: no VPN or port forwarding. The installer checks your game, Steam and Windows settings, installs and updates the mod; the game tells you when an update is out; problem reports from the game (Multiplayer \u2192 Report a problem, or Ctrl+Shift+R) and the installer (Send logs).",
+  "notes": "See your companions in the game's own character screen: click a specter or its name plate, or use the new Companions list (Profile, Find). The host can limit destiny rerolls, and a panel in the creator shows who is still choosing; if your game closes while you are ready, rejoin and press Create again. In a companion's battle your summons and healing pills work, each summary counts your own damage and kills, and if you disconnect your character keeps fighting and you can rejoin. Update now in the Multiplayer window installs new versions.",
   "dll": {
-    "url": "https://github.com/JosephCarmichael/ImmortalCoop/releases/download/v0.4.0/ImmortalCoop.dll",
-    "sha256": "f24492d1f73cdcc980e145e75f6a4ab01bed38c00aaf8285df623bf3327ff9f7",
-    "size": 1150464
+    "url": "https://github.com/JosephCarmichael/ImmortalCoop/releases/download/v0.5.0/ImmortalCoop.dll",
+    "sha256": "b87e30debd486cb4002d22460e8f753b0550e3fa778bfb2188ae4664473f8153",
+    "size": 912384
   },
   "installer": {
-    "version": "0.4.0",
-    "url": "https://github.com/JosephCarmichael/ImmortalCoop/releases/download/v0.4.0/ImmortalCoopSetup.exe",
-    "sha256": "bd42dfd8f618ef0ba13ac50dd80da8ca99a9766397d7909a3d53dfa4197a0b8a"
+    "version": "0.5.0",
+    "url": "https://github.com/JosephCarmichael/ImmortalCoop/releases/download/v0.5.0/ImmortalCoopSetup.exe",
+    "sha256": "427991491cb5a33df9d4ba9890d14215b733aa8762c38344e27df7bd6c38bf4c"
   },
   "reportUrl": "https://immortal-coop-reports.josephcarmichael.workers.dev/api/reports",
   "reportKey": "oDcBeVDlKL_TjMaAZ_RApZTn"
